@@ -4,7 +4,7 @@ from sys import argv
 from subprocess import call
 import os
 
-# Note: filename = basename.extension
+# Note: filename = basename + extension
 filename = argv[1]
 basename, extension = os.path.splitext(filename)
 
