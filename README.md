@@ -5,7 +5,7 @@ There is nothing special with the code in this repository. This Python code just
 Make an alias in your `.bash_aliases` or wherever you do that on Windows:
 
 ```bash
-alias secret="python /path/to/secret.py"
+alias secret="python /path/to/encryption.py"
 ```
 
 Then it's usage is as follows.
@@ -20,7 +20,7 @@ secret <filename>
 
 Note that the above `filename` should NOT be a `.gpg` file.
 
-## Viewing a File in Editor After Decrypting it 
+## Editing or Viewing a File in Editor
 
 Just do this:
 
@@ -36,8 +36,12 @@ The file you specify should be an encrypted file (of course!). It should end wit
 
 2. That's it. That's the only rule you should follow to keep your files always secure.
 
-## Some Prior Requirements
+## Some Things to Note
 
 1. I am assuming that you have `gpg` installed and that it is available through the `PATH`.
 
-2. Also assuming that Sublime Text is installed and that it is available through the `PATH` with the `subl` command.
+2. Also assuming that Sublime Text is installed and that it is available through the `PATH` with the `subl` command. With some minor modifications you should be able to use any other editor. Just make sure that it is accessible through `PATH` and that it holds the terminal when run. Actually this is the reason I am using `subl -w` rather than simply `subl`.
+
+3. Yet another assumption: I hope you have set the private-public key pairs in your GnuPG.
+
+4. Never do `Ctrl+C`. I haven't considered what happens when you interrupt the program.
