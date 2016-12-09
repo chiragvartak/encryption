@@ -12,8 +12,6 @@ if len(argv) != 2:
 filename = argv[1]
 basename, extension = os.path.splitext(filename)
 
-file_exists = os.path.isfile(filename)
-
 if extension == ".gpg":
     call(["gpg", "-o", basename, "-d", filename])
     call(["subl", "-w", basename])
