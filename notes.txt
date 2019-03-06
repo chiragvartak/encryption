@@ -1,0 +1,13 @@
+The "Building Reproducible Environments" section of this article seems like a good one for dependency management using pip-tools.
+https://medium.com/@jimjh/managing-dependencies-in-python-applications-b9c93dda98c2
+
+But, I think I will be using conda to do that:
+conda env export --name python-for-encryption > env.yaml
+(Remove the prefix in the above yaml file, conda does not care about it. Source: https://stackoverflow.com/questions/41274007/anaconda-export-environment-file)
+
+The python-gnupg package was added from a different conda channel:
+conda env export --name python-for-encryption > env.yaml
+Source: https://anaconda.org/conda-forge/python-gnupg
+
+To create a conda environment from a yaml file:
+conda env create --file env.yaml
